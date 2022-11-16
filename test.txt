@@ -1,0 +1,12 @@
+Etape 1 : Create a venv
+--> python3 -m venv 'path to env dir'
+Etape 2 : Activate venv
+--> Scripts\activate
+Etape 3 : Install selenium 
+--> Pip install selenium
+Etape 4 : Select Good Python 
+
+
+
+
+
