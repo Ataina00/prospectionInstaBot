@@ -106,14 +106,17 @@ with open('exemple.csv', 'a', newline='') as csvfile:
         str_followers = driver.find_element(By.XPATH, "/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[2]/div[2]/section/main/div/header/section/ul/li[2]/a/div/span").get_attribute("innerText")
         print("String :" + str_followers)
         virgule = ","
-        if virgule in str_followers : 
-            print("Le nbr de followers contient des virgules")
-            new_string_followers = str_followers.replace(",", ".")
+        if "," or "K"or "M" in str_followers : 
+            print("Le nbr de followers contient des virgules ou une lettre")
+            new_string_followers = str_followers.replace("," or "K" or "M", "")
             print(new_string_followers)
             str_to_float = float(new_string_followers)
             print(str_to_float)
-            nbr_followers = str_to_float * 1000
-            print("Nbr x 1000 :" + nbr_followers)
+            if "K" or "M" in str_followers :
+                nbr_followers = str_to_float * 1000
+                print("Nbr x 1000 :" + nbr_followers)
+            else :
+                nbr_followers = str_to_float
         else :
             nbr_followers = int(str_followers)
 
@@ -137,7 +140,7 @@ with open('exemple.csv', 'a', newline='') as csvfile:
         driver.switch_to.window(driver.window_handles[0])
         action.send_keys(Keys.ESCAPE)
         print(data)
-        action.scroll_by_amount(0,200)
+        action.scroll_by_amount(0,100)
 
 
 sleep(60)

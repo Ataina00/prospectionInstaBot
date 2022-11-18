@@ -1,21 +1,16 @@
-num = "1,961"
-virgule = ","
-if virgule in num :
-    new = num.replace(",", ".")
-    print(new)
-    print(type(new))
-    nbr = float(new)
-    print(nbr)
-    new_nbr = nbr * 1000
-    print(new_nbr)
-    if new_nbr > 100 :
-        print("Nbr supérieur à 100")
-    else : 
-        print("Nbr inférieur à 100")
-else :
-    print("Pas de virgules")
+   
 
 
+"""
+str_followers = "101K"
+if ","or "K" or "M" in str_followers :
+    new_string_followers = str_followers.replace(",", ".").replace("K", "").replace("M", "")
+    print(new_string_followers)
+    str_to_float = float(new_string_followers)
+    print(str_to_float)
+else : 
+    print("Pas de lettres")
+"""
 
     
 
